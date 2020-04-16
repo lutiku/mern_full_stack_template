@@ -15,6 +15,9 @@ cd mern-full-stack
 
 # install dependencies if they aren't there
 npm install
+
+# run your development server
+npm run dev
 ```
  
 ##  :clap:To deploy your app on Heroku
