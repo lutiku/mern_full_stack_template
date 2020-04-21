@@ -5,7 +5,7 @@ You can [Click Here](https://ancient-sierra-80316.herokuapp.com/#/)
  to see the running example. 
  
 ##  To use this template follow these commands (execute them one at a time)
-###### 1. Install Heroku CLl
+###### 1. Set up project
 ```linux
 # clone this repository 
 git clone https://github.com/erika-dorset/bewd_CA4_starter
