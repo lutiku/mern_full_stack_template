@@ -8,7 +8,7 @@ You can [Click Here](https://ancient-sierra-80316.herokuapp.com/#/)
 ###### 1. Set up project
 ```linux
 # clone this repository 
-git clone https://github.com/erika-dorset/bewd_CA4_starter
+git clone https://github.com/georgeBl/mern_full_stack_template
 
 # go inside the root folder
 cd mern-full-stack
