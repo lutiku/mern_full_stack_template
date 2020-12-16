@@ -5,15 +5,15 @@ import { Link } from 'react-router-dom';
 // Use "npm install axios" command to install
 import axios from 'axios';
 
-//Create User component that will create a new user card
-class CreateUser extends Component {
+//Create Book component that will create a new user card
+class CreateBook extends Component {
     constructor(props) {
         super(props);
         // the form fields are stored in a state
         this.state = { 
             title: '', 
-            first: '', 
-            lastName: '', 
+            first: '',
+            lastName: '',
             quote: '', 
             picture: '' 
         };
@@ -38,7 +38,7 @@ class CreateUser extends Component {
         event.preventDefault();
 
         //use axios to send a POST request to the server which includes the state information for the new user to be created
-        axios.post('/api/users', this.state)
+        axios.post('/api/books', this.state)
             //on success go to home
             .then(res => this.props.history.push('/'))
             .catch(error => {
@@ -52,7 +52,7 @@ class CreateUser extends Component {
             <div className="is-fluid">
                 {/*on form submit call handleSubmit()*/}
                 <form onSubmit={this.handleSubmit}>
-                    <h2 className="title is-1 has-text-primary">Create New User</h2>
+                    <h2 className="title is-1 has-text-primary">Create New Book</h2>
                     <hr />
                     {/*main container for input fields*/}
                     <div className="container">
@@ -66,22 +66,23 @@ class CreateUser extends Component {
                                 </div>
                             </div>
                             <div className="field">
-                                <label className="label"> First Name: </label>
+                                <label className="label"> Author First Name: </label>
                                 <div className="control">
                                     <input className="input is-small" type="text" name="first" value={this.state.first} onChange={this.handleChange} id="form" />
                                 </div>
                             </div>
                              <div className="field">
-                                <label className="label"> Picture: </label>
+                                <label className="label"> Book Picture: </label>
                                 <div className="control">
-                                    <input className="input is-small" type="text" name="picture" value={this.state.picture} onChange={this.handleChange} id="form" />
+
+                                    <input className="input is-small" type="file" name="picture" value={this.state.picture} onChange={this.handleChange} id="form" />
                                 </div>
                             </div>
                         </div>
                         {/*SECOND COLUMN*/}
                         <div className="column">
                             <div className="field">
-                                <label className="label"> Last Name: </label>
+                                <label className="label"> Author Last Name: </label>
                                 <div className="control">
                                     <input className="input is-small" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} id="form" />
                                 </div>
@@ -103,4 +104,4 @@ class CreateUser extends Component {
     }
 }
 
-export default CreateUser;
+export default CreateBook;

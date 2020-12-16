@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 // Use "npm install axios" command to install
 import axios from 'axios';
 
-//Edit User component that will edit the clicked on user with passed id
-class EditUser extends Component {
+//Edit Book component that will edit the clicked on user with passed id
+class EditBook extends Component {
     constructor(props) {
         super(props);
         // store the related to the user information into the state
@@ -28,7 +28,7 @@ class EditUser extends Component {
     // fetch the related user data
     componentDidMount() {
         // get the users API and include the id which is passed via the URL and accessed via props
-        axios.get('/api/users/' + this.props.match.params.id)
+        axios.get('/api/books/' + this.props.match.params.id)
             .then(response => {
                 //on resonse set the state values to match empty state values set in the constructor
                 this.setState({
@@ -59,7 +59,7 @@ class EditUser extends Component {
         event.preventDefault();
 
         // use axios to send a PUT request to the server which includes the updated state information
-        axios.put('/api/users', this.state)
+        axios.put('/api/books', this.state)
             //on success go to home
             .then(res => this.props.history.push('/'))
             .catch(error => {
@@ -73,7 +73,7 @@ class EditUser extends Component {
             <div className="is-fluid">
                 {/*on form submit call handleSubmit()*/}
                 <form onSubmit={this.handleSubmit}>
-                    <h2 className="title is-1 has-text-primary">Edit User</h2>
+                    <h2 className="title is-1 has-text-primary">Edit Book</h2>
                     <hr />
                     {/*main container for input fields*/}
                     <div className="container">
@@ -87,13 +87,13 @@ class EditUser extends Component {
                                     </div>
                                 </div>
                                 <div className="field">
-                                    <label className="label"> First Name: </label>
+                                    <label className="label"> Author  First Name: </label>
                                     <div className="control">
                                         <input className="input is-small" type="text" name="first" value={this.state.first} onChange={this.handleChange} id="form" />
                                     </div>
                                 </div>
                                 <div className="field">
-                                    <label className="label"> Picture: </label>
+                                    <label className="label"> Book Picture: </label>
                                     <div className="control">
                                         <input className="input is-small" type="text" name="picture" value={this.state.picture} onChange={this.handleChange} id="form" />
                                     </div>
@@ -102,7 +102,7 @@ class EditUser extends Component {
                             {/*SECOND COLUMN*/}
                             <div className="column">
                                 <div className="field">
-                                    <label className="label"> Last Name: </label>
+                                    <label className="label"> Author Last Name: </label>
                                     <div className="control">
                                         <input className="input is-small" type="text" name="lastName" value={this.state.lastName} onChange={this.handleChange} id="form" />
                                     </div>
@@ -124,4 +124,4 @@ class EditUser extends Component {
     }
 }
 
-export default EditUser;
+export default EditBook;

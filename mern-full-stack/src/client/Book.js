@@ -1,0 +1,92 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+//import the Link component to use for linking prop information
+import { Link } from 'react-router-dom';
+
+// define one single user card component
+class Book extends React.Component {
+  render() {
+    return (
+      <div className=" container column is-2" style={{ padding: "20px" }}>
+
+        {/*
+        <div className="card" style={{ borderRadius: "20px" }}>
+          <div className="card-image">
+            <figure className="image is-4by3">
+              <img alt="Profile" src={this.props.image} />
+            </figure>
+          </div>
+          <div className="card-content">
+            <div className="media">
+              <div className="media-content">
+                <p className="title is-4 has-text-primary">{this.props.first}</p>
+                <hr/>
+                <p className="subtitle is-size-6">{this.props.quote}</p>
+                {/*delete the prop with requested id from the function invoked in the parent component*/}
+        {/* <button className="button is-danger" type="button" onClick={() => {this.props.handleDelete(this.props.id);}}>
+                  Delete
+                </button>
+                {/*load the EditBook component via React Router and send the id over to the EditBook component*/}
+        {/*<Link to={`/edit-user/${this.props.id}`}>
+                  <button className="button is-primary" type="button">
+                  Edit
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        */}
+
+
+        <div className="card">
+          <div className="card-image">
+            <figure className="image is-4by3">
+              <img src={this.props.image} alt="Book Image"/>
+            </figure>
+          </div>
+          <div className="card-content">
+            <div className="media">
+              <div className="media-left">
+                <figure className="image is-48x48">
+                  <img src={this.props.image}  alt="Placeholder image"/>
+                </figure>
+              </div>
+              <div className="media-content">
+                <p className="title is-4">{this.props.first}</p>
+                <p className="subtitle is-6">@{this.props.first}</p>
+              </div>
+            </div>
+
+            <div className="content">
+              {this.props.quote}
+              <br/>
+                <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+            </div>
+
+          </div>
+          <footer className="card-footer">
+            <p className="card-footer-item">
+      <span>
+        <a href="#" onClick={() => {this.props.handleDelete(this.props.id);}}>Delete</a>
+      </span>
+            </p>
+            <p className="card-footer-item">
+      <span>
+        <Link to={`/edit-book/${this.props.id}`} href="#">Edit</Link>
+      </span>
+            </p>
+          </footer>
+        </div>
+      </div>
+
+
+
+
+
+    );
+  }
+}
+
+export default Book;
