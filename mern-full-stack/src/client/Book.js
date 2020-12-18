@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class Book extends React.Component {
   render() {
     return (
-      <div className=" container column is-2" style={{ padding: "20px" }}>
+      <div className=" container  column is-2" style={{ padding: "20px" }}>
 
         {/*
         <div className="card" style={{ borderRadius: "20px" }}>
@@ -40,31 +40,18 @@ class Book extends React.Component {
         */}
 
 
+
+
+        {/*--------------------------*/}
         <div className="card">
-          <div className="card-image">
-            <figure className="image is-4by3">
-              <img src={this.props.image} alt="Book Image"/>
-            </figure>
-          </div>
           <div className="card-content">
-            <div className="media">
-              <div className="media-left">
-                <figure className="image is-48x48">
-                  <img src={this.props.image}  alt="Placeholder image"/>
-                </figure>
-              </div>
-              <div className="media-content">
-                <p className="title is-4">{this.props.first}</p>
-                <p className="subtitle is-6">@{this.props.first}</p>
-              </div>
-            </div>
-
-            <div className="content">
+            <p className="title">
               {this.props.quote}
-              <br/>
-                <time dateTime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-            </div>
 
+            </p>
+            <p className="subtitle">
+              {this.props.first} {this.props.lastName}
+            </p>
           </div>
           <footer className="card-footer">
             <p className="card-footer-item">
@@ -74,11 +61,13 @@ class Book extends React.Component {
             </p>
             <p className="card-footer-item">
       <span>
-        <Link to={`/edit-book/${this.props.id}`} href="#">Edit</Link>
+        <Link to={`/edit-book/${this.props.id}`}>Edit</Link>
       </span>
             </p>
           </footer>
         </div>
+
+
       </div>
 
 
